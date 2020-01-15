@@ -7,7 +7,14 @@ const connect = function() {
   conn.on('connect', ()=>{
     console.log('Successfully Connected!');
     conn.write("Name: OPO");
+    //conn.write("Move: up");
   })
+  conn.on('connect', ()=>{
+    setInterval(()=>{
+      //conn.write("Move: up");
+    }, 50)
+  });
+
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
